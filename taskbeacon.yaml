@@ -1,0 +1,11 @@
+id: T000013
+slug: sst-audio
+title: "Stop-Signal Task (SST-Audio)"
+acquisition: eeg
+variant: audio
+cognitive_domain: []
+maturity: smoke_tested
+version:
+  release_tag: ""
+evidence: []
+maintainer: []
