@@ -4,7 +4,7 @@
 |----------------------|------------------------------|
 | Name                 | Stop-Signal Task (SST-Audio)       |
 | Version              | Variant/SST-Audio (1.0)                          |
-| URL / Repository     | https://github.com/TaskBeacon/SST/tree/variant/SST-Audio        |
+| URL / Repository     | https://github.com/TaskBeacon/T000013-sst-audio        |
 | Short Description    | A response inhibition task measuring the ability to suppress prepotent motor responses |
 | Created By           | Zhipeng Cao (zhipeng30@foxmail.com) |
 | Date Updated         |2025/06/22                              |
@@ -41,7 +41,7 @@ The Stop-Signal Task (SST) is a cognitive paradigm used to assess response inhib
 
 | Step                | Description                                                                 |
 |---------------------|-----------------------------------------------------------------------------|
-| Fixation            | Present fixation cross for 0.8–1.0s with trigger                            |
+| Fixation            | Present fixation cross for 0.8�?.0s with trigger                            |
 | Go Only Trial       | Present arrow; wait up to 1s for correct keypress; show feedback if none    |
 | Stop Trial          | Present arrow for SSD duration; then play auditory stop signal              |
 | Response Recording  | Capture whether responses occurred before or after stop signal              |
@@ -54,7 +54,7 @@ The Stop-Signal Task (SST) is a cognitive paradigm used to assess response inhib
 | Type                | 1-up/1-down staircase adjusting stop-signal delay (SSD)                     |
 | Target Success Rate | 50%                                                                         |
 | Step Size           | ±0.05s                                                                      |
-| Range               | 0.05–0.5s                                                                   |
+| Range               | 0.05�?.5s                                                                   |
 | Condition Pooling   | Shared SSD across conditions                                                |
 | Logging             | Logs SSD adjustment and performance to PsychoPy console                    |
 
@@ -64,9 +64,9 @@ The Stop-Signal Task (SST) is a cognitive paradigm used to assess response inhib
 
 | Field       | Meaning                        |
 |-------------|--------------------------------|
-| subject_id  | Unique participant number (101–999) |
+| subject_id  | Unique participant number (101�?99) |
 | subname     | Participant name (pinyin)      |
-| age         | Age (5–60)                     |
+| age         | Age (5�?0)                     |
 | gender      | Gender (Male or Female)        |
 
 ### b. Window Settings
@@ -98,9 +98,9 @@ The Stop-Signal Task (SST) is a cognitive paradigm used to assess response inhib
 
 | Phase                       | Duration (s)        |
 |-----------------------------|---------------------|
-| fixation                    | random 0.8–1.0      |
+| fixation                    | random 0.8�?.0      |
 | go stimulus (max duration)  | 1.0                 |
-| stop signal delay (SSD)     | adaptive (0.05–0.5) |
+| stop signal delay (SSD)     | adaptive (0.05�?.5) |
 | no-response feedback        | 0.8                 |
 
 ### e. Triggers
@@ -134,7 +134,7 @@ The Stop-Signal Task (SST) is a cognitive paradigm used to assess response inhib
 
 ## 4. Methods (for academic publication)
 
-Participants completed a stop-signal task (SST) designed to evaluate response inhibition. The task consisted of **3 blocks**, each containing **70 trials**, resulting in a total of **210 trials**. On each trial, participants saw a directional arrow (left or right) and were instructed to press the corresponding key—“F” for left, “J” for right—as quickly and accurately as possible. On **25% of the trials**, an auditory stop signal (a beep) was presented shortly after its onset, signaling the participant to inhibit their response. The delay between the go stimulus and the stop signal—the stop-signal delay (SSD)—was controlled adaptively using a 1-up/1-down staircase procedure. The SSD increased after successful inhibition and decreased after failed inhibition, with a target success rate of 50%.Trials began with a fixation cross (0.8–1.0s), followed by a go arrow. On go trials, the arrow remained on screen for up to 1 second or until a keypress. If no response occurred, a warning message was presented. On stop trials, the auditory stop signal was presented after an SSD-determined delay. Responses were recorded for both go and stop phases. The SSD was adjusted per trial based on inhibition performance. Participants received a break after each block, displaying their hit rate on go trials and success rate on stop trials.
+Participants completed a stop-signal task (SST) designed to evaluate response inhibition. The task consisted of **3 blocks**, each containing **70 trials**, resulting in a total of **210 trials**. On each trial, participants saw a directional arrow (left or right) and were instructed to press the corresponding key—“F�?for left, “J�?for right—as quickly and accurately as possible. On **25% of the trials**, an auditory stop signal (a beep) was presented shortly after its onset, signaling the participant to inhibit their response. The delay between the go stimulus and the stop signal—the stop-signal delay (SSD)—was controlled adaptively using a 1-up/1-down staircase procedure. The SSD increased after successful inhibition and decreased after failed inhibition, with a target success rate of 50%.Trials began with a fixation cross (0.8�?.0s), followed by a go arrow. On go trials, the arrow remained on screen for up to 1 second or until a keypress. If no response occurred, a warning message was presented. On stop trials, the auditory stop signal was presented after an SSD-determined delay. Responses were recorded for both go and stop phases. The SSD was adjusted per trial based on inhibition performance. Participants received a break after each block, displaying their hit rate on go trials and success rate on stop trials.
 
 ## 5. References
 
