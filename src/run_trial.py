@@ -1,4 +1,4 @@
-from functools import partial
+﻿from functools import partial
 from psyflow import StimUnit
 from .utils import Controller  # your simple 1-up/1-down SSTControllerSimple
 
@@ -9,17 +9,17 @@ def run_trial(
     condition: str,           # 'go' or 'stop'
     stim_bank: dict,          # must contain 'fixation': ShapeStim
     controller: Controller,   # 1-up/1-down controller managing ssd
-    trigger_sender=None,
+    trigger_runtime=None,
     
 ):
     """
     Single SST trial:
-      - fixation → go (or go→stop) → record acc/RT → update ssd on stop trials
+      - fixation â†’ go (or goâ†’stop) â†’ record acc/RT â†’ update ssd on stop trials
     Returns:
       trial_data dict with fields 'condition','acc','rt','response', + timing/triggers.
     """
     trial_data = {'condition': condition}
-    make_unit = partial(StimUnit, win=win, kb=kb,  triggersender=trigger_sender)
+    make_unit = partial(StimUnit, win=win, kb=kb,  runtime=trigger_runtime)
 
     # 'go_left' or 'go_right' or 'stop_left' or 'stop_right'
     _condition = condition.split('_')[0]
@@ -70,7 +70,7 @@ def run_trial(
     else:
         stop_stim = stim_bank.get('stop_signal')
         go_stim = stim_bank.get(condition.replace('stop', 'go'))
-        # 3a) Phase 1: present go_stim for ssd, do NOT terminate on presses
+        # 3a) PhaseÂ 1: present go_stim for ssd, do NOT terminate on presses
         ssd     = controller.get_ssd()
         go_unit = make_unit(unit_label='go_ssd') \
             .add_stim(go_stim) \
@@ -104,3 +104,4 @@ def run_trial(
         controller.update(success=not failed_stop)
 
     return trial_data
+
