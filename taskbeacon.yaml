@@ -1,4 +1,4 @@
-id: T000013
+﻿id: T000013
 slug: sst-audio
 title: "Stop-Signal Task (SST-Audio)"
 acquisition: eeg
@@ -7,5 +7,7 @@ cognitive_domain: []
 maturity: smoke_tested
 version:
   release_tag: ""
+contracts:
+  psyflow_taps: v0.1.0
 evidence: []
 maintainer: []
