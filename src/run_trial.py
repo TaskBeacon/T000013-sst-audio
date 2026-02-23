@@ -1,31 +1,9 @@
 ﻿from functools import partial
 
-from psyflow import StimUnit, set_trial_context
+from psyflow import StimUnit, set_trial_context, next_trial_id
 from .utils import Controller
 
 # trial stages use task-specific phase labels via set_trial_context(...)
-
-
-def _deadline_s(value) -> float | None:
-    if isinstance(value, (int, float)):
-        return float(value)
-    if isinstance(value, (list, tuple)) and value:
-        try:
-            return float(max(value))
-        except Exception:
-            return None
-    return None
-
-
-def _next_trial_id(controller) -> int:
-    histories = getattr(controller, "histories", {}) or {}
-    done = 0
-    for items in histories.values():
-        try:
-            done += len(items)
-        except Exception:
-            continue
-    return int(done) + 1
 
 
 def run_trial(
@@ -40,7 +18,7 @@ def run_trial(
     block_idx=None,
 ):
     """Single SST-Audio trial."""
-    trial_id = _next_trial_id(controller)
+    trial_id = next_trial_id()
     trial_data = {"condition": condition}
     make_unit = partial(StimUnit, win=win, kb=kb, runtime=trigger_runtime)
 
@@ -64,7 +42,7 @@ def run_trial(
             go_unit,
             trial_id=trial_id,
             phase="go_response_window",
-            deadline_s=_deadline_s(settings.go_duration),
+            deadline_s=settings.go_duration,
             valid_keys=list(settings.key_list),
             block_id=block_id,
             condition_id=str(condition),
@@ -99,7 +77,7 @@ def run_trial(
             go_unit,
             trial_id=trial_id,
             phase="pre_stop_go_window",
-            deadline_s=_deadline_s(ssd),
+            deadline_s=ssd,
             valid_keys=list(settings.key_list),
             block_id=block_id,
             condition_id=str(condition),
@@ -122,7 +100,7 @@ def run_trial(
             stop_unit,
             trial_id=trial_id,
             phase="stop_signal_window",
-            deadline_s=_deadline_s(rem),
+            deadline_s=rem,
             valid_keys=list(settings.key_list),
             block_id=block_id,
             condition_id=str(condition),
