@@ -1,1 +1,5 @@
-﻿"""Task-specific responders/samplers for simulation mode."""
+"""Task-specific responders for SST-Audio simulation mode."""
+
+from .task_sampler import TaskSamplerResponder
+
+__all__ = ["TaskSamplerResponder"]

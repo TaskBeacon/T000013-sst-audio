@@ -1,6 +1,7 @@
-﻿# Responders
+# Responders
 
-Put task-specific simulation responders/samplers here.
+Place task-specific simulation responders/samplers in this folder.
 
-- Scripted sim uses `config/config_scripted_sim.yaml`.
-- Sampler sim uses `config/config_sampler_sim.yaml` and should point to a class in this folder.
+Examples:
+- `responders/task_sampler.py`
+- `sim.responder.type: responders.task_sampler:TaskSamplerResponder`

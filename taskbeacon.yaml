@@ -1,4 +1,4 @@
-﻿id: T000013
+id: T000013
 slug: sst-audio
 title: "Stop-Signal Task (SST-Audio)"
 acquisition: eeg
@@ -6,8 +6,15 @@ variant: audio
 cognitive_domain: []
 maturity: smoke_tested
 version:
-  release_tag: ""
+  release_tag: "v1.1.2"
 contracts:
   psyflow_taps: v0.1.0
-evidence: []
-maintainer: []
+evidence:
+  - references/references.yaml
+  - references/references.md
+  - references/parameter_mapping.md
+  - references/stimulus_mapping.md
+  - references/task_logic_audit.md
+maintainer:
+  - name: Zhipeng Cao
+    email: zhipeng30@foxmail.com

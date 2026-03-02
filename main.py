@@ -1,4 +1,4 @@
-﻿from contextlib import nullcontext
+from contextlib import nullcontext
 from pathlib import Path
 
 import pandas as pd
@@ -32,7 +32,7 @@ DEFAULT_CONFIG_BY_MODE = {
 
 
 def run(options: TaskRunOptions):
-    """Run SST-Audio in human/qa/sim mode with one auditable flow."""
+    """Run SST-Audio task in human/qa/sim mode with one auditable flow."""
     task_root = Path(__file__).resolve().parent
     cfg = load_config(str(options.config_path))
     print(f"[SST-AUDIO] mode={options.mode} config={options.config_path}")
@@ -80,6 +80,7 @@ def run(options: TaskRunOptions):
 
         settings.controller = cfg["controller_config"]
         settings.save_to_json()
+        trigger_runtime.send(settings.triggers.get("exp_onset"))
         controller = Controller.from_dict(settings.controller)
 
         instruction = StimUnit("instruction_text", win, kb, runtime=trigger_runtime).add_stim(
@@ -140,9 +141,9 @@ def run(options: TaskRunOptions):
                 )
             ).wait_and_continue()
 
-        StimUnit("block", win, kb, runtime=trigger_runtime).add_stim(stim_bank.get("good_bye")).wait_and_continue(
-            terminate=True
-        )
+        StimUnit("goodbye", win, kb, runtime=trigger_runtime).add_stim(stim_bank.get("good_bye")).wait_and_continue()
+
+        trigger_runtime.send(settings.triggers.get("exp_end"))
 
         df = pd.DataFrame(all_data)
         df.to_csv(settings.res_file, index=False)
@@ -155,7 +156,7 @@ def main() -> None:
     task_root = Path(__file__).resolve().parent
     options = parse_task_run_options(
         task_root=task_root,
-        description="Run SST-Audio in human/qa/sim mode.",
+        description="Run SST-Audio task in human/qa/sim mode.",
         default_config_by_mode=DEFAULT_CONFIG_BY_MODE,
         modes=MODES,
     )

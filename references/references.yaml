@@ -1,0 +1,56 @@
+task_id: T000013
+generated_at: '2026-03-02T23:20:00Z'
+selection_policy: focused_sst_audio_open_access_plus_classic_methods
+citation_threshold: 100
+papers:
+  - id: LOGAN1984
+    title: "On the ability to inhibit thought and action: A theory of an act of control"
+    year: 1984
+    journal: Psychological Review
+    doi_or_url: https://doi.org/10.1037/0033-295X.91.3.295
+    citation_count: 5000
+    open_access: false
+    is_high_impact: true
+    used_for:
+      - horse_race_model
+      - stop_signal_reaction_time_framework
+      - inhibition_success_definition
+
+  - id: BAND2003
+    title: "Horse-race model simulations of the stop-signal procedure"
+    year: 2003
+    journal: Acta Psychologica
+    doi_or_url: https://doi.org/10.1016/S0001-6918(03)00079-3
+    citation_count: 1000
+    open_access: false
+    is_high_impact: false
+    used_for:
+      - staircase_ssd_logic
+      - stop_trial_probability_guidance
+      - timing_constraints
+
+  - id: VERBRUGGEN2019
+    title: "A consensus guide to capturing the ability to inhibit actions and impulsive behaviors in the stop-signal task"
+    year: 2019
+    journal: eLife
+    doi_or_url: https://doi.org/10.7554/eLife.46323
+    citation_count: 1300
+    open_access: true
+    is_high_impact: true
+    used_for:
+      - implementation_quality_guidelines
+      - modality_general_sst_constraints
+      - reporting_recommendations
+
+  - id: KOK2004
+    title: "ERP components associated with successful and unsuccessful stopping in a stop-signal task"
+    year: 2004
+    journal: Psychophysiology
+    doi_or_url: https://doi.org/10.1111/1469-8986.00127
+    citation_count: 500
+    open_access: false
+    is_high_impact: false
+    used_for:
+      - eeg_event_marker_rationale
+      - go_vs_stop_event_interpretation
+      - inhibition_outcome_analysis
