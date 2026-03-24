@@ -29,6 +29,8 @@ This auditory SST measures response inhibition. Participants respond to directio
 
 ## 2. Task Flow
 
+![Task Flow](task_flow.png)
+
 ### Block-Level Flow
 
 | Step | Description |
