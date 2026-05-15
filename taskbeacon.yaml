@@ -8,7 +8,7 @@ maturity: smoke_tested
 version:
   release_tag: "v1.1.2"
 contracts:
-  taps: v0.1.0
+  taps: v0.2.0
 evidence:
   - references/references.yaml
   - references/references.md
@@ -18,3 +18,5 @@ evidence:
 maintainer:
   - name: Zhipeng Cao
     email: zhipeng30@foxmail.com
+runtime:
+  profile: psyflow
