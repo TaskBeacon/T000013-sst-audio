@@ -70,7 +70,25 @@ def run_trial(
         resp = go_unit.get_state("key_press", False)
 
         if not resp:
-            make_unit(unit_label="no_response_feedback").add_stim(stim_bank.get("no_response_feedback")).show(
+            no_response_unit = make_unit(unit_label="no_response_feedback").add_stim(stim_bank.get("no_response_feedback"))
+            set_trial_context(
+                no_response_unit,
+                trial_id=trial_id,
+                phase="no_response_feedback",
+                deadline_s=settings.no_response_feedback_duration,
+                valid_keys=[],
+                block_id=block_id,
+                condition_id=str(condition),
+                task_factors={
+                    "condition": str(condition),
+                    "stage": "no_response_feedback",
+                    "condition_kind": cond_kind,
+                    "condition_side": cond_side,
+                    "block_idx": block_idx,
+                },
+                stim_id="no_response_feedback",
+            )
+            no_response_unit.show(
                 duration=settings.no_response_feedback_duration,
                 onset_trigger=settings.triggers.get("no_response_feedback_onset"),
             ).to_dict(trial_data)

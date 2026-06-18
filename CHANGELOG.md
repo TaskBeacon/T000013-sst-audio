@@ -4,6 +4,9 @@ All notable development changes for `T000013-sst-audio` are documented here.
 
 ## [Unreleased]
 
+### Changed
+- Added explicit trial context metadata for the go-trial `no_response_feedback` phase.
+
 ## [1.1.2] - 2026-03-02
 
 ### Added
